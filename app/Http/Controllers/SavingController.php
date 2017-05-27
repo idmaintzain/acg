@@ -6,6 +6,10 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 use App\saving;
 use Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+
+
 
 class SavingController extends Controller
 {
@@ -36,21 +40,52 @@ class SavingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+
     public function store(Request $request)
     {
         //
+
+ 
+      
+       // $file = $request->file('filename');
+   
+    //  $destinationPath = 'uploads';
+    //  $file->move($destinationPath,$file->file());
+
+
+
+
+
+
 
 
 
 
 
            $user = new saving; 
+
+
+
+       
+
+
         $user->firstname = Input::get("firstname",false);
         $user->surname = Input::get("surname",false);
          $user->phone = Input::get("phone",false);
           $user->email = Input::get("email",false);
            $user->filename = Input::get("filename",false);
-       
+     
+       if(Input::hasFile('filename')){
+    $file = Input::file('filename');
+    $file = $file->move(public_path().'/uploads',$file->getOriginalFileName());
+    $user->image = $file->getRealPath();
+ }
+
         $user->save();
 
         return ("data saved");

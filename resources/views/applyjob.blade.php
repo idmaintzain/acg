@@ -21,7 +21,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="title">Firstname</label>  
   <div class="col-md-4">
-  <input id="title" name="amount" type="text" placeholder="" class="form-control input-md">
+  <input id="title" name="firstname" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -30,14 +30,14 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="body">Surname</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="body" name="firstname"></textarea>
+    <textarea class="form-control" id="body" name="surname"></textarea>
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="body">Surname</label>
+  <label class="col-md-4 control-label" for="body">Phone</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="body" name="surname"></textarea>
+    <textarea class="form-control" id="body" name="phone"></textarea>
   </div>
 </div>
 
